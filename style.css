@@ -12,3 +12,26 @@ body{
     margin: 0 auto;
     border: 1px solid #ddd;
 }
+#transaction-area{
+    max-width: 80%;
+    margin: 0 auto;
+    display: none;
+}
+.allItem{
+    padding:1.5rem 1rem;
+    color: #fff;
+    margin:0rem 1rem;
+    border-radius: .5rem;
+}
+.allItem h2{
+    font-size: 4rem;
+}
+.deposit{
+    background-image: linear-gradient(to right,#6a5acd, #290be9);
+}
+.withdraw{
+    background-image: linear-gradient(to right,#ffa07a, #ec4909);
+}
+.balance{
+    background-image: linear-gradient(to right,#ffa500, #00ff55);
+}
