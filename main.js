@@ -11,6 +11,13 @@
 const depositBtn = document.getElementById("addDeposit");
 depositBtn.addEventListener('click',()=>{
  const depositNumber = getInputAmount("deposite-Amount");
+ if (depositNumber < 0) {
+   alert("Deposite number is not negative!")
+ }else{
+  UpdateSpanText("currentDeposit",depositNumber);
+  UpdateSpanText("currentBalance",depositNumber);
+  document.getElementById("deposite-Amount").value = "";
+ }
 
  // const depositeAmount = document.getElementById("deposite-Amount").value;
  // const depositNumber = parseFloat(depositeAmount);
@@ -20,17 +27,20 @@ depositBtn.addEventListener('click',()=>{
  // const totalDeposit = depositNumber + currentDepositNumber;
  // document.getElementById("currentDeposit").innerText = totalDeposit;
 
- UpdateSpanText("currentDeposit",depositNumber);
- UpdateSpanText("currentBalance",depositNumber);
- document.getElementById("deposite-Amount").value = "";
+
 
 })
 //withdraw btn event handler
 const withDrawBtn = document.getElementById("addWithdraw");
 withDrawBtn.addEventListener('click', ()=>{
  const withdrawNumber = getInputAmount("withdrawAmount");
- UpdateSpanText("currentWithdraw",withdrawNumber);
- UpdateSpanText("currentBalance",-1 * withdrawNumber);
+ if (withdrawNumber < 0) {
+  alert("withdraw number is not negative!")
+}else{
+  UpdateSpanText("currentWithdraw",withdrawNumber);
+  UpdateSpanText("currentBalance",-1 * withdrawNumber);
+}
+
  // const currentNumber = document.getElementById("currentBalance").innerText;
  // debitBalance(withdrawNumber,currentNumber)
 
